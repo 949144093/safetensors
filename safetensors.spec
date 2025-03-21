@@ -22,11 +22,10 @@ Safetensors 是一个快速且安全的张量序列化库。与其他现有解�
 
 %build
 export CARGO_HOME=$(pwd)/.cargo
-tar zxvf %{SOURCE1}
 mkdir -p $CARGO_HOME
 cp %{SOURCE2} $CARGO_HOME
-cp -r vendor/ bindings/python/
 cd bindings/python
+tar zxvf %{SOURCE1}
 cargo vendor > $CARGO_HOME/config
 cargo build --release --offline
 
