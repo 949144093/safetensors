@@ -7,7 +7,7 @@ License:  Apache-2.0
 URL:      https://github.com/huggingface/safetensors
 Source0:  safetensors-%{version}.tar.gz
 Source1:	vendor.tar.gz
-Source2:	config.toml
+Source2:	config
 
 BuildRequires: rust, cargo, make, gcc, openssl-devel pkgconfig
 
