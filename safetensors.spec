@@ -5,7 +5,7 @@ Summary:  A fast and safe tensor serialization library
 Summary(zh_CN):  一个快速且安全的张量序列化库
 License:  Apache-2.0
 URL:      https://github.com/huggingface/safetensors
-Source0:  https://github.com/huggingface/safetensors/archive/refs/tags/v%{version}.tar.gz
+Source0:  safetensors-%{version}.tar.gz
 
 BuildRequires: rust, cargo, make, gcc, openssl-devel pkgconfig
 
