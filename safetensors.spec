@@ -25,6 +25,7 @@ export CARGO_HOME=$(pwd)/.cargo
 tar zxvf %{SOURCE1}
 mkdir -p $CARGO_HOME
 cp %{SOURCE2} $CARGO_HOME
+cp -r vendor/ bindings/python/
 cd bindings/python
 cargo vendor > $CARGO_HOME/config
 cargo build --release --offline
