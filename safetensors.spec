@@ -1,11 +1,13 @@
 Name:     safetensors
 Version:  0.4.4
-Release:  1%{?dist}
+Release:  3%{?dist}
 Summary:  A fast and safe tensor serialization library
 Summary(zh_CN):  一个快速且安全的张量序列化库
 License:  Apache-2.0
 URL:      https://github.com/huggingface/safetensors
 Source0:  safetensors-%{version}.tar.gz
+Source1:	config.toml
+Source2:	vendor.tar.gz
 
 BuildRequires: rust, cargo, make, gcc, openssl-devel pkgconfig
 
