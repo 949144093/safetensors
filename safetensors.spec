@@ -26,7 +26,7 @@ cp %{SOURCE2} bindings/python/.cargo
 tar zxvf %{SOURCE1}
 cp -r vendor/ bindings/python/
 cd bindings/python
-cargo vendor > $CARGO_HOME/config
+cargo vendor
 cargo build --release --offline
 
 %install
