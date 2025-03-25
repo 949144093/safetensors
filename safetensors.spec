@@ -23,8 +23,9 @@ Safetensors 是一个快速且安全的张量序列化库。与其他现有解�
 %build
 mkdir safetensors/.cargo
 cp %{SOURCE2} safetensors/.cargo
-cd safetensors
 unzip -q %{SOURCE1} -d vendor
+cp -r vendor safetensors/vendor
+cd safetensors
 cargo build --release --offline
 
 %install
