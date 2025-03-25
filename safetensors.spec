@@ -6,10 +6,10 @@ Summary(zh_CN):  一个快速且安全的张量序列化库
 License:  Apache-2.0
 URL:      https://github.com/huggingface/safetensors
 Source0:  safetensors-%{version}.tar.gz
-Source1:	vendor.tar.gz
+Source1:	vendor.zip
 Source2:	config
 
-BuildRequires: rust, cargo, make, gcc, openssl-devel pkgconfig
+BuildRequires: rust, cargo, unzip
 
 %description
 Safetensors is a fast and safe tensor serialization library. It aims to provide a more efficient and secure way to serialize tensors compared to other existing solutions.
@@ -21,12 +21,10 @@ Safetensors 是一个快速且安全的张量序列化库。与其他现有解�
 %setup -q -n safetensors-%{version}
 
 %build
-mkdir bindings/python/.cargo
-cp %{SOURCE2} bindings/python/.cargo
-tar zxvf %{SOURCE1}
-cp -r vendor/ bindings/python/
-cd bindings/python
-cargo vendor
+mkdir safetensors/.cargo
+cp %{SOURCE2} safetensors/.cargo
+cd safetensors
+unzip -q %{SOURCE1} -d vendor
 cargo build --release --offline
 
 %install
