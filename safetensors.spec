@@ -9,7 +9,7 @@ Source0:  safetensors-%{version}.tar.gz
 Source1:	vendor.zip
 Source2:	config
 
-BuildRequires: rust, cargo, unzip
+BuildRequires: rust, cargo, unzip, python3-devel, openssl-devel, pkgconfig, gcc
 
 %description
 Safetensors is a fast and safe tensor serialization library. It aims to provide a more efficient and secure way to serialize tensors compared to other existing solutions.
